@@ -1,0 +1,14 @@
+! name of channel, pedestal, gain
+
+BCM3H04A, 0, 76.293e-2
+BCM3H04B, 0, 76.293e-2
+
+BPM3C11,  0, 76.293e-6
+BPM3C12,  0, 76.293e-6
+BPM3C16,  0, 76.293e-6
+BPM3H02,  0, 76.293e-6
+BPM3H07A, 0, 76.293e-6
+BPM3H07B, 0, 76.293e-6
+BPM3H07C, 0, 76.293e-6
+
+!END
