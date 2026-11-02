@@ -1,0 +1,12 @@
+# detector map for NucAT mock data
+
+[QwHelicity]
+name = Helicity Info
+map = mock_nucat_helicity.map
+
+[QwBeamLine]
+name     = Main BeamLine
+map      = mock_nucat_beamline.map
+param    = mock_nucat_beamline_pedestal.map
+ogeom     = mock_nucat_beamline_geometry.map
+eventcut = mock_nucat_beamline_eventcuts.map
