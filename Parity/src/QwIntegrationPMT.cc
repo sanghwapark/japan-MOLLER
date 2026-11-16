@@ -193,7 +193,7 @@ void QwIntegrationPMT::RandomizeEventData(int helicity, double time)
  */
 void QwIntegrationPMT::RandomizeMollerEvent(int helicity, const QwBeamCharge& charge, const QwBeamPosition& xpos, const QwBeamPosition& ypos, const QwBeamAngle& xprime, const QwBeamAngle& yprime, const QwBeamEnergy& energy)
 {
-  QwMollerADC_Channel temp(this->fTriumf_ADC);
+  QwVQWK_Channel temp(this->fTriumf_ADC);
   fTriumf_ADC.ClearEventData();
 
   temp.AssignScaledValue(xpos, fCoeff_x);
@@ -218,7 +218,7 @@ void QwIntegrationPMT::RandomizeMollerEvent(int helicity, const QwBeamCharge& ch
   fTriumf_ADC.Scale(fNormRate*fVoltPerHz);  //  After this Scale function, fTriumf_ADC should be the detector signal in volts.
   fTriumf_ADC.ForceMapfileSampleSize();
   //  Double_t voltage_width = sqrt(fTriumf_ADC.GetValue()*window_length/fVoltPerHz)/(window_length/fVoltPerHz);
-  Double_t voltage_width = sqrt( fTriumf_ADC.GetValue() / (fTriumf_ADC.GetNumberOfSamples()*QwMollerADC_Channel::kTimePerSample/Qw::sec/fVoltPerHz) );
+  Double_t voltage_width = sqrt( fTriumf_ADC.GetValue() / (fTriumf_ADC.GetNumberOfSamples()*QwVQWK_Channel::kTimePerSample/Qw::sec/fVoltPerHz) );
   //std::cout << "Voltage Width: " << voltage_width << std::endl;
   fTriumf_ADC.SmearByResolution(voltage_width);
   fTriumf_ADC.SetRawEventData();
@@ -336,7 +336,7 @@ void QwIntegrationPMT::SetDefaultSampleSize(Int_t sample_size){
 /********************************************************/
 /** \brief Set the saturation voltage limit for the ADC front-end. */
 void QwIntegrationPMT::SetSaturationLimit(Double_t saturation_volt){
-  fTriumf_ADC.SetMollerADCSaturationLimt(saturation_volt);
+  fTriumf_ADC.SetVQWKSaturationLimt(saturation_volt);
 }
 //*/
 
@@ -509,8 +509,8 @@ void QwIntegrationPMT::Scale(Double_t factor)
 void QwIntegrationPMT::Normalize(VQwDataElement* denom)
 {
   if (fIsNormalizable) {
-    QwMollerADC_Channel* denom_ptr = dynamic_cast<QwMollerADC_Channel*>(denom);
-    QwMollerADC_Channel vqwk_denom(*denom_ptr);
+    QwVQWK_Channel* denom_ptr = dynamic_cast<QwVQWK_Channel*>(denom);
+    QwVQWK_Channel vqwk_denom(*denom_ptr);
     fTriumf_ADC.DivideBy(vqwk_denom);
   }
 }
@@ -522,9 +522,9 @@ void QwIntegrationPMT::PrintValue() const
 
 void QwIntegrationPMT::PrintInfo() const
 {
-  //std::cout<<"QwMollerADC_Channel Info " <<std::endl;
+  //std::cout<<"QwVQWK_Channel Info " <<std::endl;
   //std::cout<<" Running AVG "<<GetElementName()<<" current running AVG "<<IntegrationPMT_Running_AVG<<std::endl;
-  std::cout<<"QwMollerADC_Channel Info " <<std::endl;
+  std::cout<<"QwVQWK_Channel Info " <<std::endl;
   fTriumf_ADC.PrintInfo();
   std::cout<< "Blindability is "    << (fIsBlindable?"TRUE":"FALSE")
 	   <<std::endl;

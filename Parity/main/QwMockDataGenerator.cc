@@ -29,7 +29,7 @@
 
 
 // Multiplet structure
-static const int kMultiplet = 64;
+static const int kMultiplet = 4;
 
 // Beam trips on qwk_bcm0l03
 static const bool kBeamTrips = true;
