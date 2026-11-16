@@ -1,0 +1,69 @@
+# This is an example of a detector definition file.
+
+[LRBCorrector]
+  name       = LinRegBlue Corrector (run-level slopes)
+  priority   = 10
+  map        = mock_corrolator.conf
+  slope-file-base = blueR
+  slope-file-suff = new.slope.root
+  slope-path = .
+  tree-name  = mulc_lrb
+  tree-comment = Corrected helicity event data tree (run-level slopes)
+
+[QwCorrelator]
+  name       = lrb_std
+  priority   = 50
+  map        = mock_corrolator.conf
+  slope-file-base = blueR
+  slope-file-suff = new.slope.root
+  slope-path = .
+  alias-file-base = regalias_
+  alias-file-suff =
+  alias-path = .
+  disable-histos = true
+  tree-name  = lrb_std
+  tree-comment = Correlations
+
+[QwCorrelatorNew]
+  name       = lrb_std_new
+  priority   = 50
+  map        = mock_corrolator.conf
+  slope-file-base = blueR_newcorr
+  slope-file-suff = new.slope.root
+  slope-path = .
+  alias-file-base = regalias_newcorr_
+  alias-file-suff =
+  alias-path = .
+  disable-histos = true
+  tree-name  = newcorr
+  tree-comment = Correlations
+
+[GrandCorrelator]
+  name       = lrb_std_grand
+  priority   = 50
+  map        = mock_corrolator_truncated.conf
+  slope-file-base = blueR_grand
+  slope-file-suff = new.slope.root
+  slope-path = .
+  alias-file-base = regalias_grand_
+  alias-file-suff =
+  alias-path = .
+  disable-histos = true
+  tree-name  = grand
+  tree-comment = Correlations
+
+[QwCombiner]
+  name = beamline_combiner
+  map  = mock_beamline_combiner.map
+
+[QwCombiner]
+  name = det_combiner
+  priority = 99
+  map  = mock_det_combiner.map
+  tree-name  = avgs
+  tree-comment = Averages of detector combinations
+
+[QwTrendHandler]
+  name = trend
+  priority = 100
+  map  = mock_trend.map

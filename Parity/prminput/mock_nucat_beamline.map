@@ -47,25 +47,25 @@ VQWK, 3, 5, bcm, BCM3H04B
 
 begin=combinedbpm
 name=bpm_target
-bpm3h07a, bpmstripline, 1.0, 1.0, 1.0
-bpm3h07b, bpmstripline, 1.0, 1.0, 1.0
-bpm3h07c, bpmstripline, 1.0, 1.0, 1.0
+BPM3H07A, bpmstripline, 1.0, 1.0, 1.0
+BPM3H07B, bpmstripline, 1.0, 1.0, 1.0
+BPM3H07C, bpmstripline, 1.0, 1.0, 1.0
 end=combinedbpm
 
 begin=combinedbcm
 name=bcm_target
-bcm3h04a, bcm, 1.0
-bcm3h04b, bcm, 1.0
+BCM3H04A, bcm, 1.0
+BCM3H04B, bcm, 1.0
 end=combinedbcm
 
 !begin=energycalculator
 !name=target_energy
-!!name          type            ratios     property
-!BPM3C11,       bpmstripline,   0.00012,	  beamposition
-!BPM3C12,       bpmstripline,   0.00024,	  beamposition
-!BPM3C16,       bpmstripline,   0.00004,	  beamposition
-!bpm_target,    combinedbpm,    -0.00017,  targetbeamposition
-!bpm_target,    combinedbpm,    0.0026,    targetbeamangle   ! 2.6 rad/1000 for mrad slope (z in meters)
+!name          type            ratios     property
+! BPM3C11,       bpmstripline,   0.00012,	  beamposition
+! BPM3C12,       bpmstripline,   0.00024,	  beamposition
+! BPM3C16,       bpmstripline,   0.00004,	  beamposition
+! bpm_target,    combinedbpm,    -0.00017,  targetbeamposition
+! bpm_target,    combinedbpm,    0.0026,    targetbeamangle   ! 2.6 rad/1000 for mrad slope (z in meters)
 !end=energycalculator
 
 [PUBLISH]

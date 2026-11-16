@@ -7,3 +7,7 @@ window_period = 1e-3
 [QwBeamLine]
  name       = Main BeamLine
  mock_param = mock_nucat_parameters_beamline.map
+
+[QwDetectorArray]
+name = NucAT Detector
+mock_param = mock_nucat_parameters_main.map
