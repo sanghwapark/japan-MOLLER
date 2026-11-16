@@ -8,5 +8,11 @@ map = mock_nucat_helicity.map
 name     = Main BeamLine
 map      = mock_nucat_beamline.map
 param    = mock_nucat_beamline_pedestal.map
-ogeom     = mock_nucat_beamline_geometry.map
+geom     = mock_nucat_beamline_geometry.map
 eventcut = mock_nucat_beamline_eventcuts.map
+
+[QwDetectorArray]
+name  = NucAT Detector
+map   = mock_nucat_main_adc.map
+param = mock_nucat_main_pedestal.map
+eventcut = mock_nucat_main_eventcuts.map

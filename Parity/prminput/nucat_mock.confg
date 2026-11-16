@@ -1,0 +1,18 @@
+# Test config file for AT preparation
+
+#add-config = prexbankflag.conf
+
+data=/Users/sanghwa/work/hallc/nuclear/AT/daq/japan-MOLLER
+rootfiles=/Users/sanghwa/work/hallc/nuclear/AT/daq/analysis/rootfiles
+
+single-output-file = yes
+codafile-stem = QwMock_
+codafile-ext = log
+coda-version = 3
+
+rootfile-stem = mock_
+
+ring.size = 200
+ring.stability = -1
+
+detectors = nucat_mock.map

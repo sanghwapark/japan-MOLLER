@@ -1,6 +1,24 @@
 EVENTCUTS = 3
 
+!for bpmstrpline devices
+!device_type, device_name, channel_name, lower limit, upper limit
+!channel_name can be relx, rely, absx, absy, wsum, xp, xm, yp, ym
+!Cuts are applied after the VQwSubsystem::ProcessEvent() routine.
+!So pedestals are applied before appyling the cuts.
+
+!device_type,  device_name, channel_name, lower limit, upper limit, local(l)/global(g), stability percentage
+
+
 !! The cuts below are used to make the grand correlator use the same event
 !! selection as the standard correlation.
 combinedbpm,	bpm_target,     absx, -200,	200,	g,	0,	0
-combinedbcm     bcm_target              5       70      g       0       0
+
+!for bcm devices
+!device_type, device_name,      lower limit, upper limit, local(l)/global(g), stability percentage
+combinedbcm,    bcm_target,     5,      35,      g,     0,      0
+
+
+!IMPORTANT
+!---------
+!Make sure when putting tabs in the map file entries, always put ", " before inserting a tab.
+!Otherwise the routine QwParameterFile::GetNextToken(", ") will extract the entry with the tab character.
