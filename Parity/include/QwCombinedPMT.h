@@ -16,7 +16,8 @@
 #endif // HAS_RNTUPLE_SUPPORT
 
 // Qweak headers
-#include "QwMollerADC_Channel.h"
+//#include "QwMollerADC_Channel.h"
+#include "QwVQWK_Channel.h"
 #include "QwIntegrationPMT.h"
 
 // Forward declarations
@@ -57,7 +58,7 @@ class QwCombinedPMT : public VQwDataElement {
   void  InitializeChannel(TString subsystem, TString name, TString datatosave);
   void  LinkChannel(TString name);
 
-  const QwMollerADC_Channel* GetChannel(const TString name) const {
+  const QwVQWK_Channel* GetChannel(const TString name) const {
     if (fSumADC.GetElementName() == name) return fSumADC.GetChannel(name);
     else return 0;
   };

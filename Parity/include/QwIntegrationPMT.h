@@ -16,7 +16,8 @@
 #endif // HAS_RNTUPLE_SUPPORT
 
 // Qweak headers
-#include "QwMollerADC_Channel.h"
+#include "QwVQWK_Channel.h"
+//#include "QwMollerADC_Channel.h"
 #include "QwParameterFile.h"
 
 // Forward declarations
@@ -75,7 +76,7 @@ class QwIntegrationPMT : public VQwDataElement{
   void  InitializeChannel(TString subsystem, TString module, TString name, TString datatosave);
   void SetElementName(const TString &name) { fElementName = name; fTriumf_ADC.SetElementName(name);};
 
-  const QwMollerADC_Channel* GetChannel(const TString name) const {
+  const QwVQWK_Channel* GetChannel(const TString name) const {
     if (fTriumf_ADC.GetElementName() == name) return &fTriumf_ADC;
     else return 0;
   };
@@ -205,7 +206,8 @@ void RandomizeMollerEvent(int helicity, const QwBeamCharge& charge, const QwBeam
   Double_t fCoeff_yp;
   Double_t fCoeff_e;
 
-  QwMollerADC_Channel fTriumf_ADC;
+  //QwMollerADC_Channel fTriumf_ADC;
+  QwVQWK_Channel fTriumf_ADC; // for NucAT mock data
 
   Bool_t fIsBlindable; //
   Bool_t fIsNormalizable;

@@ -21,6 +21,7 @@
 
 // Qweak headers
 #include "QwSubsystemArray.h"
+#include "QwMollerADC_Channel.h"
 #include "QwLog.h"
 #ifdef __USE_DATABASE__
 #include "QwParitySchema.h"
@@ -353,12 +354,25 @@ Int_t VQwDetectorArray::LoadChannelMap(TString mapfile) {
                     localMainDetID.fWordInSubbank = wordsofar + offset;
                 }
 
-            } else if (modtype=="VPMT") {
+        } else if (modtype=="VPMT") {
 
             localMainDetID.fCombinedChannelNames = combinedchannelnames;
             localMainDetID.fWeight = weight;
 
             //std::cout<<"Add in a combined channel"<<std::endl;
+           
+        } else if (modtype=="VQWK") {
+
+            localMainDetID.fCombinedChannelNames = combinedchannelnames;
+            localMainDetID.fWeight = weight;
+
+            Int_t offset = QwVQWK_Channel::GetBufferOffset(modnum, channum)+vqwk_buffer_offset;
+
+                if (offset>=0){
+
+                    localMainDetID.fWordInSubbank = wordsofar + offset;
+                }
+                
         } else {
 
             QwError << "VQwDetectorArray::LoadChannelMap:  Unknown module type: "
