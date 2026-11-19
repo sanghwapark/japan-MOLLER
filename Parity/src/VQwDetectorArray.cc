@@ -22,6 +22,7 @@
 // Qweak headers
 #include "QwSubsystemArray.h"
 #include "QwMollerADC_Channel.h"
+#include "QwVQWK_Channel.h"
 #include "QwLog.h"
 #ifdef __USE_DATABASE__
 #include "QwParitySchema.h"
@@ -934,7 +935,7 @@ void  VQwDetectorArray::RandomizeMollerEvent(int helicity /*, const QwBeamCharge
 
         if (bDEBUG){
 
-            dynamic_cast<QwMollerADC_Channel*>(&fTargetX)->PrintInfo();
+            dynamic_cast<QwVQWK_Channel*>(&fTargetX)->PrintInfo();
             QwWarning << "VQwDetectorArray::RandomizeMollerEvent Found "<<fTargetX.GetElementName()<< QwLog::endl;
         }
 
@@ -949,7 +950,7 @@ void  VQwDetectorArray::RandomizeMollerEvent(int helicity /*, const QwBeamCharge
     if(RequestExternalValue("y_targ", &fTargetY)){
 
         if (bDEBUG){
-            dynamic_cast<QwMollerADC_Channel*>(&fTargetY)->PrintInfo();
+            dynamic_cast<QwVQWK_Channel*>(&fTargetY)->PrintInfo();
             QwWarning << "VQwDetectorArray::RandomizeMollerEvent Found "<<fTargetY.GetElementName()<< QwLog::endl;
         }
 
@@ -964,7 +965,7 @@ void  VQwDetectorArray::RandomizeMollerEvent(int helicity /*, const QwBeamCharge
 
         if (bDEBUG){
 
-            dynamic_cast<QwMollerADC_Channel*>(&fTargetXprime)->PrintInfo();
+            dynamic_cast<QwVQWK_Channel*>(&fTargetXprime)->PrintInfo();
             QwWarning << "VQwDetectorArray::RandomizeMollerEvent Found "<<fTargetXprime.GetElementName()<< QwLog::endl;
         }
 
@@ -980,7 +981,7 @@ void  VQwDetectorArray::RandomizeMollerEvent(int helicity /*, const QwBeamCharge
 
         if (bDEBUG){
 
-            dynamic_cast<QwMollerADC_Channel*>(&fTargetYprime)->PrintInfo();
+            dynamic_cast<QwVQWK_Channel*>(&fTargetYprime)->PrintInfo();
             QwWarning << "VQwDetectorArray::RandomizeMollerEvent Found "<<fTargetYprime.GetElementName()<< QwLog::endl;
 
         }
@@ -997,7 +998,7 @@ void  VQwDetectorArray::RandomizeMollerEvent(int helicity /*, const QwBeamCharge
 
         if (bDEBUG){
 
-            dynamic_cast<QwMollerADC_Channel*>(&fTargetEnergy)->PrintInfo();
+            dynamic_cast<QwVQWK_Channel*>(&fTargetEnergy)->PrintInfo();
             QwWarning << "VQwDetectorArray::RandomizeMollerEvent Found "<<fTargetEnergy.GetElementName()<< QwLog::endl;
 
         }
@@ -1146,7 +1147,7 @@ void VQwDetectorArray::IncrementErrorCounters() {
 void VQwDetectorArray::PrintErrorCounters() const {
 
     QwMessage<<"*********VQwDetectorArray Error Summary****************"<<QwLog::endl;
-    QwMollerADC_Channel::PrintErrorCounterHead();
+    QwVQWK_Channel::PrintErrorCounterHead();
 
     for(size_t i=0;i<fIntegrationPMT.size();i++){
 
@@ -1162,7 +1163,7 @@ void VQwDetectorArray::PrintErrorCounters() const {
 
     }
 
-    QwMollerADC_Channel::PrintErrorCounterTail();
+    QwVQWK_Channel::PrintErrorCounterTail();
 
 }
 
@@ -1240,7 +1241,7 @@ void  VQwDetectorArray::ExchangeProcessedData() {
 
                     QwWarning << "VQwDetectorArray::ExchangeProcessedData Found "<<fTargetCharge.GetElementName()<< QwLog::endl;
                     //QwWarning <<"****VQwDetectorArray****"<< QwLog::endl;
-                    (dynamic_cast<QwMollerADC_Channel*>(&fTargetCharge))->PrintInfo();
+                    (dynamic_cast<QwVQWK_Channel*>(&fTargetCharge))->PrintInfo();
 
             }
 

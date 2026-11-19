@@ -52,7 +52,7 @@ combinedbcm,      bcm_target,     beamtrip      50000.0,      5.0,          10.0
 
 !EnergyCalculator parameters
 !device type,     device name,    asym,         mean,         sigma(jitter)
-energycalculator, target_energy,  0.0e-5,       0.0e-3,      1.0e-6 !1.0e-6
+!energycalculator, target_energy,  0.0e-5,       0.0e-3,      1.0e-6 !1.0e-6
 
 !EnergyCalculator drifts               amplitude (abs), phase shift (rad), frequency (Hz)
-energycalculator, target_energy,  drift         1.0e-5,        0.0,          53.0 !1.0e-5
+!energycalculator, target_energy,  drift         1.0e-5,        0.0,          53.0 !1.0e-5
