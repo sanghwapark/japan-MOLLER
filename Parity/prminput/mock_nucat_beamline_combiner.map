@@ -1,0 +1,23 @@
+# Differences
+[diff:@diff_bpm_7aX_7cX_avg]
+diff:bpm3h07aX, 0.5
+diff:bpm3h07cX, 0.5
+
+[diff:@diff_bpm_7aX_7cX_dd]
+diff:bpm3h07aX, 0.5
+diff:bpm3h07cX, -0.5
+
+[diff:@diff_bpm_12X]
+diff:bpm3c12X, 1
+
+[diff:@diff_bpm_11X_12X]
+diff:bpm3c11X, 1
+diff:bpm3c12X, -1
+
+[asym:@asym_bcm_an_target_avg]
+asym:bcm3h04a, 0.5
+asym:bcm3h04b, 0.5
+
+[asym:@asym_bcm_an_target_diff]
+asym:bcm3h04a, 0.5
+asym:bcm3h04b, -0.5

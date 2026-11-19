@@ -23,14 +23,14 @@
 !   default BSEN scaling factor = 18.81
 !   default AlphaX/AlphaY = 1.0
 
-bmpstripline, BPM3C11, 0.0, 0.0, 7.2718, 1.0, 1.0, 1.0
-bmpstripline, BPM3C12, 0.0, 0.0, 7.7919, 1.0, 1.0, 1.0
-bmpstripline, BPM3C16, 0.0, 0.0, 9.8719, 1.0, 1.0, 1.0
+bpmstripline, BPM3C11, 0.0, 0.0, 7.2718, 1.0, 1.0, 1.0
+bpmstripline, BPM3C12, 0.0, 0.0, 7.7919, 1.0, 1.0, 1.0
+bpmstripline, BPM3C16, 0.0, 0.0, 9.8719, 1.0, 1.0, 1.0
 
-bmpstripline, BPM3H02, 0.0, 0.0, 12.9062, 1.0, 1.0, 1.0
-bmpstripline, BPM3H07A, 0.0, 0.0, 14.1382, 1.0, 1.0, 1.0
-bmpstripline, BPM3H07A, 0.0, 0.0, 14.2336, 1.0, 1.0, 1.0
-bmpstripline, BPM3H07A, 0.0, 0.0, 14.3299, 1.0, 1.0, 1.0
+bpmstripline, BPM3H02, 0.0, 0.0, 12.9062, 1.0, 1.0, 1.0
+bpmstripline, BPM3H07A, 0.0, 0.0, 14.1382, 1.0, 1.0, 1.0
+bpmstripline, BPM3H07B, 0.0, 0.0, 14.2336, 1.0, 1.0, 1.0
+bpmstripline, BPM3H07C, 0.0, 0.0, 14.3299, 1.0, 1.0, 1.0
 
 combinedbpm, bpm_target, 0.0, 0.0, 14.4586, 1.0, 1.0, 1.0
 

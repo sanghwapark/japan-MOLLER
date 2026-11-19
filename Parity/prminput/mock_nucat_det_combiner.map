@@ -1,0 +1,36 @@
+# Rules for this file
+# - no repeating dependent variables in the same section
+#   (probably also not in different sections, come to think of it)
+#
+# - Alias names start with "@" after the "asym" or "diff" prefix.
+#   They should also be all lower case.
+#
+
+# Segmented detector
+[asym:@asym_seg]
+asym:seg_0,   0.1000
+asym:seg_1,   0.1000
+asym:seg_2,   0.1000
+asym:seg_3,   0.1000
+asym:seg_4,   0.1000
+asym:seg_5,   0.1000
+asym:seg_6,   0.1000
+asym:seg_7,   0.1000
+asym:seg_8,   0.1000
+asym:seg_9,   0.1000
+
+# SE/Elastic part (bottom half)
+[asym:@asym_seg_b]
+asym:seg_0,   0.2000
+asym:seg_1,   0.2000
+asym:seg_2,   0.2000
+asym:seg_3,   0.2000
+asym:seg_4,   0.2000
+
+# Elastic/Inela mix (top half)
+[asym:@asym_seg_t]
+asym:seg_5,   0.2000
+asym:seg_6,   0.2000
+asym:seg_7,   0.2000
+asym:seg_8,   0.2000
+asym:seg_9,   0.2000

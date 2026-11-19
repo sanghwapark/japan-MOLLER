@@ -1,0 +1,12 @@
+# QwTrendHandler channel list: time-ordered TProfile "strip charts".
+# Each non-comment line is one channel token: <type>:<name>
+# type = asym | diff | yield | mps
+#
+# Optional settings (preamble):
+nbins = 200
+binwidth = 1
+
+# Asymmetry strip charts (pattern scope): mean +/- RMS vs pattern index
+asym:bcm3h04a
+asym:bcm_target
+asym:bpm3h07X
