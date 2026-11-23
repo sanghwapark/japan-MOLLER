@@ -104,7 +104,7 @@ void QwEnergyCalculator::ProcessEvent()
 {
   //Bool_t ldebug = kFALSE;
   //Double_t targetbeamangle = 0.0;
-  static QwMollerADC_Channel tmp;
+  static QwVQWK_Channel tmp;
   tmp.InitializeChannel("tmp","derived");
   tmp.ClearEventData();
 
@@ -112,7 +112,7 @@ void QwEnergyCalculator::ProcessEvent()
 
   for(UInt_t i = 0; i<fProperty.size(); i++){
     if(fProperty[i].Contains("targetbeamangle")){
-      tmp.ArcTan((((QwCombinedBPM<QwMollerADC_Channel>*)fDevice[i])->fSlope[VQwBPM::kXAxis]));
+      tmp.ArcTan((((QwCombinedBPM<QwVQWK_Channel>*)fDevice[i])->fSlope[VQwBPM::kXAxis]));
      } else {
       tmp.AssignValueFrom(fDevice[i]->GetPosition(VQwBPM::kXAxis));
      }
@@ -184,7 +184,7 @@ void QwEnergyCalculator::GetProjectedPosition(VQwBPM *device)
 
   if (idevice>fProperty.size()) return;  // Return without trying to find a new position if "device" doesn't contribute to the energy calculator
 
-  static QwMollerADC_Channel tmp;
+  static QwVQWK_Channel tmp;
   tmp.InitializeChannel("tmp","derived");
   tmp.ClearEventData();
   //  Set the device position value to be equal to the energy change
@@ -199,7 +199,7 @@ void QwEnergyCalculator::GetProjectedPosition(VQwBPM *device)
    } else {
       //  Calculate contribution to fEnergyChange from the other devices
       if(fProperty[i].Contains("targetbeamangle")) {
-       tmp.ArcTan((((QwCombinedBPM<QwMollerADC_Channel>*)fDevice[i])->fSlope[VQwBPM::kXAxis]));
+       tmp.ArcTan((((QwCombinedBPM<QwVQWK_Channel>*)fDevice[i])->fSlope[VQwBPM::kXAxis]));
       } else {
        tmp.AssignValueFrom(fDevice[i]->GetPosition(VQwBPM::kXAxis));
       }
@@ -276,7 +276,7 @@ Bool_t QwEnergyCalculator::ApplySingleEventCuts(){
   UInt_t error_code = 0;
   for(UInt_t i = 0; i<fProperty.size(); i++){
     if(fProperty[i].Contains("targetbeamangle")){
-      error_code |= ((QwCombinedBPM<QwMollerADC_Channel>*)fDevice[i])->fSlope[0].GetErrorCode();
+      error_code |= ((QwCombinedBPM<QwVQWK_Channel>*)fDevice[i])->fSlope[0].GetErrorCode();
     } else {
       error_code |= fDevice[i]->GetPosition(VQwBPM::kXAxis)->GetErrorCode();
     }
@@ -322,7 +322,7 @@ UInt_t QwEnergyCalculator::UpdateErrorFlag()
   UInt_t error_code = 0;
   for(UInt_t i = 0; i<fProperty.size(); i++){
     if(fProperty[i].Contains("targetbeamangle")){
-      error_code |= ((QwCombinedBPM<QwMollerADC_Channel>*)fDevice[i])->fSlope[0].GetErrorCode();
+      error_code |= ((QwCombinedBPM<QwVQWK_Channel>*)fDevice[i])->fSlope[0].GetErrorCode();
     } else {
       error_code |= fDevice[i]->GetPosition(VQwBPM::kXAxis)->GetErrorCode();
     }

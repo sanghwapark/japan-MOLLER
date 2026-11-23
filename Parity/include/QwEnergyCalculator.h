@@ -149,8 +149,8 @@ class QwEnergyCalculator : public VQwDataElement{
 #endif // __USE_DATABASE__
 
  protected:
-    QwMollerADC_Channel fEnergyChange;
-
+    //QwMollerADC_Channel fEnergyChange;
+    QwVQWK_Channel fEnergyChange;
 
  private:
     std::vector <const VQwBPM*> fDevice;

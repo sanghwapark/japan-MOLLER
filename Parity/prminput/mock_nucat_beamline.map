@@ -58,22 +58,22 @@ BCM3H04A, bcm, 1.0
 BCM3H04B, bcm, 1.0
 end=combinedbcm
 
-!begin=energycalculator
-!name=target_energy
-!!name          type            ratios     property
-! BPM3C11,       bpmstripline,   0.00012,	  beamposition
-! BPM3C12,       bpmstripline,   0.00024,	  beamposition
-! BPM3C16,       bpmstripline,   0.00004,	  beamposition
-! bpm_target,    combinedbpm,    -0.00017,  targetbeamposition
-! bpm_target,    combinedbpm,    0.0026,    targetbeamangle   ! 2.6 rad/1000 for mrad slope (z in meters)
-!end=energycalculator
+begin=energycalculator
+name=target_energy
+!name          type            ratios     property
+BPM3C11,       bpmstripline,   0.00012,	  beamposition
+BPM3C12,       bpmstripline,   0.00024,	  beamposition
+BPM3C16,       bpmstripline,   0.00004,	  beamposition
+bpm_target,    combinedbpm,    -0.00017,  targetbeamposition
+bpm_target,    combinedbpm,    0.0026,    targetbeamangle   ! 2.6 rad/1000 for mrad slope (z in meters)
+end=energycalculator
 
 [PUBLISH]
-q_targ,  combobcm, bcm_target, c
-x_targ,  combobpm, bpm_target, x
-y_targ,  combobpm, bpm_target, y
-xp_targ, combobpm, bpm_target, xp
-yp_targ, combobpm, bpm_target, yp
-!e_targ,  comboenergy, target_energy, e
+ q_targ,  combobcm, bcm_target, c
+ x_targ,  combobpm, bpm_target, x
+ y_targ,  combobpm, bpm_target, y
+ xp_targ, combobpm, bpm_target, xp
+ yp_targ, combobpm, bpm_target, yp
+ e_targ,   comboenergy,  target_energy,  e
 
 !END
